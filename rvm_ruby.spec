@@ -1,4 +1,4 @@
-%define version 1.0
+%define version 2.0
 %define release 1.el6_CS
 %define installed_rvm_path /usr/local/rvm
 
@@ -35,6 +35,15 @@ ruby-1.9.3-p0
     rubygems-bundler (0.3.0)
     whenever (0.7.3)
 
+ruby-1.9.2-p290
+    activesupport (3.2.3)
+    bundler (1.1.3)
+    chronic (0.6.7)
+    i18n (0.6.0)
+    multi_json (1.2.0)
+    rake (0.9.2)
+    rubygems-bundler (0.3.0)
+    whenever (0.7.3)
 
 
 %install
@@ -89,4 +98,8 @@ exit 0
 
 %changelog
 * Tue Mar 03 2012 Alexandre Fouche 1.0
+- add ruby-1.9.2-p290 with gems
+
+* Tue Mar 03 2012 Alexandre Fouche 1.0
 Package existing preinstalled RVM into a RPM
+- ruby-1.9.3-p0 with gems
