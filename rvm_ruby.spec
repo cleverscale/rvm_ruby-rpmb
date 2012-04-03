@@ -1,4 +1,4 @@
-%define version 1
+%define version 1.0
 %define release 1.el6_CS
 %define installed_rvm_path /usr/local/rvm
 
@@ -22,16 +22,19 @@ and switching between them.
 
 This RPM is a simply a packaging of a preinstalled RVM with following rubies and gems:
 
+rvm 1.11.6 (stable)
+
 Rubies in this package:
 ruby-1.9.3-p0
-  bundler
-  bluepill
-  whenever
+    activesupport (3.2.3)
+    bundler (1.1.3)
+    chronic (0.6.7)
+    i18n (0.6.0)
+    multi_json (1.2.0)
+    rake (0.9.2)
+    rubygems-bundler (0.3.0)
+    whenever (0.7.3)
 
-ruby-1.9.2-p290
-  bundler
-  bluepill
-  whenever
 
 
 %install
