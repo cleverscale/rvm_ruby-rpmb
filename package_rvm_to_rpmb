@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# This script will package /usr/local/rvm into a binary RPM
+
+set -e
+
+mkdir -p rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS,tmp}
+
+rpmbuild --define "_topdir %(pwd)/rpmbuild" -bb rvm_ruby.spec
