@@ -2,6 +2,7 @@
 %define release 1.el6_CS
 %define installed_rvm_path /usr/local/rvm
 
+%global rvm_group rvm
 
 Name: rvm_ruby
 Summary: Ruby Version Manager
