@@ -1,4 +1,4 @@
-%define version 2.0
+%define version 2.1
 %define release 1.el6_CS
 %define installed_rvm_path /usr/local/rvm
 
@@ -98,7 +98,10 @@ exit 0
 
 
 %changelog
-* Tue Mar 03 2012 Alexandre Fouche 1.0
+* Tue Mar 03 2012 Alexandre Fouche 2.1
+- added "rvm_project_rvmrc=0" to /etc/rvmrc
+
+* Tue Mar 03 2012 Alexandre Fouche 2.0
 - add ruby-1.9.2-p290 with gems
 
 * Tue Mar 03 2012 Alexandre Fouche 1.0
