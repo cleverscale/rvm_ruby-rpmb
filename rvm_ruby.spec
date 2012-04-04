@@ -1,4 +1,4 @@
-%define version 2.1
+%define version 2.2
 %define release 1.el6_CS
 %define installed_rvm_path /usr/local/rvm
 
@@ -33,6 +33,8 @@ ruby-1.9.3-p0
     i18n (0.6.0)
     multi_json (1.2.0)
     rake (0.9.2)
+    redis (2.2.2)
+    redis-namespace (1.1.0)
     rubygems-bundler (0.3.0)
     whenever (0.7.3)
 
@@ -61,9 +63,12 @@ mkdir -p %{buildroot}%{_sysconfdir}/profile.d
 cp -a %{_sysconfdir}/rvmrc %{buildroot}%{_sysconfdir}/rvmrc
 cp -a %{_sysconfdir}/profile.d/rvm.sh %{buildroot}%{_sysconfdir}/profile.d/rvm.sh
 
-mkdir -p %{buildroot}%{_mandir}
-rsync -av %{installed_rvm_path}/man/* %{buildroot}%{_mandir}
-rm -rf %{buildroot}%{installed_rvm_path}/man
+pushd /usr/local/rvm/man
+for f in `find . -type f`; do
+    mkdir -p %{buildroot}%{_mandir}/`dirname $f`
+    ln -s %{installed_rvm_path}/man/$f %{buildroot}%{_mandir}/$f
+done
+popd
 
 # Strip binaries
 find %{buildroot} -type f -print0 |xargs -0 file --no-dereference --no-pad |grep 'not stripped' |cut -f1 -d: |xargs -r strip
@@ -74,18 +79,15 @@ rm -rf %{buildroot}
 
 
 %pre
-if test -e %{installed_rvm_path}; then
+rpm --quiet -q %{name}
+is_installed=$?
+if test -e %{installed_rvm_path} -a $is_installed -ne 0; then
     echo %{installed_rvm_path} already exist
     exit -1
 fi
 
 getent group %{rvm_group} >/dev/null || groupadd -r %{rvm_group}
 
-exit 0
-
-
-%postun
-rm -rf %{installed_rvm_path}
 exit 0
 
 
@@ -98,6 +100,9 @@ exit 0
 
 
 %changelog
+* Wed Mar 04 2012 Alexandre Fouche 2.2
+- added redis and redis-namespace gems to ruby-1.9.3-p0
+
 * Tue Mar 03 2012 Alexandre Fouche 2.1
 - added "rvm_project_rvmrc=0" to /etc/rvmrc
 
