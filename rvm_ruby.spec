@@ -34,7 +34,7 @@ ruby-1.9.3-p0
     multi_json (1.2.0)
     rake (0.9.2)
     redis (2.2.2)
-    redis-namespace (1.1.0)
+    redis-namespace (1.0.3)
     rubygems-bundler (0.3.0)
     whenever (0.7.3)
 
