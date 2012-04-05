@@ -13,6 +13,8 @@ URL: http://rvm.beginrescueend.com/
 Group: Applications/System
 
 #BuildArch: noarch
+
+# BuildRoot is ignored in spec files from rpm>=4.6
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-%(%{__id_u} -n)
 
 BuildRequires:  rsync
