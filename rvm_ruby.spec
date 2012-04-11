@@ -1,4 +1,4 @@
-%define version 2.2
+%define version 2.3
 %define release 1.el6_CS
 %define installed_rvm_path /usr/local/rvm
 
@@ -28,26 +28,35 @@ This RPM is a simply a packaging of a preinstalled RVM with following rubies and
 rvm 1.11.6 (stable)
 
 Rubies in this package:
+
 ruby-1.9.3-p0
     activesupport (3.2.3)
+    bluepill (0.0.51)
     bundler (1.1.3)
     chronic (0.6.7)
+    daemons (1.1.8)
     i18n (0.6.0)
     multi_json (1.2.0)
     rake (0.9.2)
     redis (2.2.2)
     redis-namespace (1.0.3)
     rubygems-bundler (0.3.0)
+    state_machine (0.9.4)
     whenever (0.7.3)
 
 ruby-1.9.2-p290
     activesupport (3.2.3)
+    bluepill (0.0.51)
     bundler (1.1.3)
     chronic (0.6.7)
+    daemons (1.1.8)
     i18n (0.6.0)
     multi_json (1.2.0)
     rake (0.9.2)
+    redis (2.2.2)
+    redis-namespace (1.0.3)
     rubygems-bundler (0.3.0)
+    state_machine (0.9.4)
     whenever (0.7.3)
 
 
@@ -102,6 +111,10 @@ exit 0
 
 
 %changelog
+* Wed Apr 11 2012 Alexandre Fouche 2.3
+- added bluepill 0.0.51 gem to ruby-1.9.2-p290 and ruby-1.9.3-p0
+- added redis and redis-namespace gems to ruby-1.9.2-p290
+
 * Wed Mar 04 2012 Alexandre Fouche 2.2
 - added redis and redis-namespace gems to ruby-1.9.3-p0
 
