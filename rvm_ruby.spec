@@ -1,4 +1,4 @@
-%define version 2.3
+%define version 2.4
 %define release 1.el6_CS
 %define installed_rvm_path /usr/local/rvm
 
@@ -35,13 +35,18 @@ ruby-1.9.3-p0
     bundler (1.1.3)
     chronic (0.6.7)
     daemons (1.1.8)
+    ffi (1.0.11)
     i18n (0.6.0)
     multi_json (1.2.0)
+    net-ldap (0.2.2)
+    net-ping (1.5.3)
     rake (0.9.2)
     redis (2.2.2)
     redis-namespace (1.0.3)
     rubygems-bundler (0.3.0)
     state_machine (0.9.4)
+    stomp (1.2.2)
+    sys-proctable (0.9.1 universal-linux)
     whenever (0.7.3)
 
 ruby-1.9.2-p290
@@ -50,13 +55,18 @@ ruby-1.9.2-p290
     bundler (1.1.3)
     chronic (0.6.7)
     daemons (1.1.8)
+    ffi (1.0.11)
     i18n (0.6.0)
     multi_json (1.2.0)
+    net-ldap (0.2.2)
+    net-ping (1.5.3)
     rake (0.9.2)
     redis (2.2.2)
     redis-namespace (1.0.3)
     rubygems-bundler (0.3.0)
     state_machine (0.9.4)
+    stomp (1.2.2)
+    sys-proctable (0.9.1 universal-linux)
     whenever (0.7.3)
 
 
@@ -111,6 +121,11 @@ exit 0
 
 
 %changelog
+* Tue Apr 17 2012 Alexandre Fouche 2.4
+- Added stomp 1.2.2 gem
+- Added sys-proctable 0.9.1 gem
+- Added net-ping 1.5.3 gem
+
 * Wed Apr 11 2012 Alexandre Fouche 2.3
 - added bluepill 0.0.51 gem to ruby-1.9.2-p290 and ruby-1.9.3-p0
 - added redis and redis-namespace gems to ruby-1.9.2-p290
