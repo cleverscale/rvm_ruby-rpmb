@@ -1,4 +1,4 @@
-%define version 2.4
+%define version 3.0
 %define release 1.el6_CS
 %define installed_rvm_path /usr/local/rvm
 
@@ -23,51 +23,15 @@ BuildRequires:  rsync
 RVM is the Ruby Version Manager (rvm). It manages Ruby interpreter environments
 and switching between them.
 
-This RPM is a simply a packaging of a preinstalled RVM with following rubies and gems:
+This RPM is a simply a packaging of a preinstalled RVM with following rubies and no gems:
 
-rvm 1.11.6 (stable)
+rvm 1.13.0 (stable)
 
 Rubies in this package:
+    ruby-1.9.3-p0
+    ruby-1.9.2-p290
 
-ruby-1.9.3-p0
-    activesupport (3.2.3)
-    bluepill (0.0.51)
-    bundler (1.1.3)
-    chronic (0.6.7)
-    daemons (1.1.8)
-    ffi (1.0.11)
-    i18n (0.6.0)
-    multi_json (1.2.0)
-    net-ldap (0.2.2)
-    net-ping (1.5.3)
-    rake (0.9.2)
-    redis (2.2.2)
-    redis-namespace (1.0.3)
-    rubygems-bundler (0.3.0)
-    state_machine (0.9.4)
-    stomp (1.2.2)
-    sys-proctable (0.9.1 universal-linux)
-    whenever (0.7.3)
-
-ruby-1.9.2-p290
-    activesupport (3.2.3)
-    bluepill (0.0.51)
-    bundler (1.1.3)
-    chronic (0.6.7)
-    daemons (1.1.8)
-    ffi (1.0.11)
-    i18n (0.6.0)
-    multi_json (1.2.0)
-    net-ldap (0.2.2)
-    net-ping (1.5.3)
-    rake (0.9.2)
-    redis (2.2.2)
-    redis-namespace (1.0.3)
-    rubygems-bundler (0.3.0)
-    state_machine (0.9.4)
-    stomp (1.2.2)
-    sys-proctable (0.9.1 universal-linux)
-    whenever (0.7.3)
+No gems
 
 
 %install
@@ -121,6 +85,10 @@ exit 0
 
 
 %changelog
+* Thu Apr 26 2012 Alexandre Fouche 3.0
+- Updated to RVM 1.13.0
+- No more gems (they are in separate RPMs built with FPM)
+
 * Tue Apr 17 2012 Alexandre Fouche 2.4
 - Added stomp 1.2.2 gem
 - Added sys-proctable 0.9.1 gem
